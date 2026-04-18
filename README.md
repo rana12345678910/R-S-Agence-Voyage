@@ -1,7 +1,7 @@
 # 🌍 S&R VOYAGES – Projet PHP
 
 ## 📖 Description
-e projet est la transformation d’un site statique **HTML/CSS/JS** en une application web **PHP dynamique**.  
+Ce projet est la transformation d’un site statique **HTML/CSS/JS** en une application web **PHP dynamique**.  
 Il s’inscrit dans le cadre du cahier des charges du module JSPHP et respecte les exigences de gestion d’entités, d’interactions utilisateurs et d’administration.
 ---
 
