@@ -1,0 +1,390 @@
+/************ Style général ************/
+body { 
+    font-family: Arial, sans-serif; 
+    margin:0; 
+    padding:0;
+    color: white; 
+    box-sizing: border-box;
+    background: #061327;
+    background: linear-gradient(196deg, rgba(6, 19, 39, 1) 0%, rgba(13, 38, 77, 1) 49%, rgba(6, 19, 39, 1) 100%);
+}
+/************ Navbar ************/
+nav {
+    background: #061327;
+    background: linear-gradient(196deg, rgba(6, 19, 39, 1) 0%, rgba(13, 38, 77, 1) 49%, rgba(6, 19, 39, 1) 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5px 40px;
+}
+
+nav h1 {
+    color: white;
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    color: #00bfff;
+}
+
+/* Sous-menu */
+nav ul li ul {
+    display: none;
+    position: absolute;
+    background: #061327;
+    background: linear-gradient(196deg, rgba(6, 19, 39, 1) 0%, rgba(13, 38, 77, 1) 49%, rgba(6, 19, 39, 1) 100%);
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    z-index: 10;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li {
+    padding: 10px;
+}
+
+nav ul li ul li a {
+    display: block;
+}
+
+/*logo*/
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 45px;   /* ajuste selon ton logo */
+  height: auto;
+  margin-right: 10px;
+}
+
+.site-name {
+  font-size: 24px;
+  color: white;
+  margin: 0;     /* IMPORTANT pour éviter le décalage */
+}
+
+/************ Hero avec animation ************/
+.hero {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-bottom: 3px solid white;
+}
+
+.hero img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: fadeSlider 9s infinite; /* 3 images × 3 secondes */
+}
+
+.voy img{
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+/* Décalage pour chaque image */
+.hero img:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.hero img:nth-child(2) {
+    animation-delay: 3s;
+}
+
+.hero img:nth-child(3) {
+    animation-delay: 6s;
+}
+
+/* Animation */
+@keyframes fadeSlider {
+    0%   { opacity: 0; }
+    5%   { opacity: 1; }
+    33%  { opacity: 1; } /* reste visible */
+    38%  { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+
+/************ Sections ************/
+section {
+    padding: 40px;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 28px;
+    color: white;
+}
+
+/************ Slider horizontal ************/
+.slider-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+}
+
+.slider-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.slider-container::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 10px;
+}
+
+/************ Cards ************/
+.card {
+    min-width: 260px;
+    background-color: white;
+    color: #0b1d3a;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.card2 {
+    min-width: 260px;
+    height: 500px;  
+    background-color: white;
+    color: #0b1d3a;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+} 
+.cardimg {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+.info {
+    padding: 15px;
+}
+
+.info h3 {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.info p {
+    font-size: 14px;
+    margin: 3px 0;
+}
+
+/************ Footer ************/
+/* Footer complet */
+footer {
+    background: #061327;
+    background: linear-gradient(196deg, rgba(6, 19, 39, 1) 0%, rgba(13, 38, 77, 1) 49%, rgba(6, 19, 39, 1) 100%);
+    color: white;
+    margin-top: 40px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    padding: 40px;
+}
+
+.footer-block h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.footer-block p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 15px;
+    background-color: #040e1c;
+    font-size: 13px;
+}
+
+
+/* Section Avis + Formulaire en 2 colonnes */
+.reviews-section {
+    padding: 50px 40px;
+    background-color: #0b1d3a;
+}
+
+.reviews-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.reviews-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+/* Colonne Avis */
+.reviews-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.review-card {
+    background-color: white;
+    color: #0b1d3a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Colonne Formulaire */
+.reviews-right {
+    background: #061327;
+    background: linear-gradient(196deg, rgba(6, 19, 39, 1) 0%, rgba(13, 38, 77, 1) 49%, rgba(6, 19, 39, 1) 100%);
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.reviews-right h3 {
+    margin-bottom: 15px;
+    color: white;
+}
+
+.review-form input,
+.review-form select,
+.review-form textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 14px;
+}
+
+.review-form textarea {
+    height: 100px;
+    resize: none;
+}
+
+.review-form button {
+    width: 100%;
+    background-color: #00bfff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.review-form button:hover {
+    background-color: #009acd;
+}
+
+/* Grille pour les hôtels */
+.hotels-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 cartes par ligne */
+    gap: 20px;
+    padding: 50px 0;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #d4af37, #b8962e); /* doré */
+  color: #0b1f3a;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 48px;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0.85;
+  z-index: 999;
+}
+
+.back-to-top:hover {
+  transform: translateY(-5px);
+  opacity: 1;
+}
+
+
+.reserver-section {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.reserver-button {
+  display: inline-block;
+  background: linear-gradient(135deg, #d4af37, #b8962e); /* doré */
+  color: #061327;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 16px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reserver-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+}
