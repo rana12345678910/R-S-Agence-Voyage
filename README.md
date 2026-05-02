@@ -40,8 +40,13 @@ agence_voyage/
 │   └── images/       # Logos et images des destinations
 │
 ├── includes/
-│   ├── header.php    # Barre de navigation factorisée
-│   └── footer.php    # Pied de page factorisé
+│   └── header.php    # Barre de navigation factorisée
+│  
+|
+├── connexion/
+│   ├── agence_voyage_db.sql           # Fichier script base de données
+│   ├── login.php                      # Formulaire login
+│   └── register.php                   # Formulaire registration
 │
 ├── index.php         # Page d’accueil
 ├── reservation.php   # Formulaire de réservation
