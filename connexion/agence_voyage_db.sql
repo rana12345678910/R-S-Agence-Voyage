@@ -101,10 +101,18 @@ CREATE TABLE `voyages` (
   `image` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+CREATE TABLE avis (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(100) NOT NULL,
+    commentaire TEXT NOT NULL,
+    date_avis TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 --
 -- Index pour les tables déchargées
 --
-
+ALTER TABLE `avis`
+  ADD PRIMARY KEY (`id`),
+  
 --
 -- Index pour la table `admin`
 --
@@ -142,18 +150,16 @@ ALTER TABLE `voyages`
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
---
--- AUTO_INCREMENT pour la table `admin`
---
+
 ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
---
--- AUTO_INCREMENT pour la table `hotels`
---
+
 ALTER TABLE `hotels`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
+ALTER TABLE `avis`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `reservations`
 --
