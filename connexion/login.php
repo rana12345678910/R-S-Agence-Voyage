@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['email'] = $admin['email'];
         $_SESSION['type'] = "admin";
 
-        header("Location: ../admin/adminpage.php");
+        header("Location: ../admin/dashboard_admin.php");
         exit;
     }
 
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['email'] = $user['email'];
         $_SESSION['type'] = "user";
 
-        header("Location: ../user/userpage.php");
+        header("Location: ../index.php");
         exit;
     }
 
