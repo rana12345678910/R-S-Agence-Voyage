@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 09 mai 2026 à 18:58
+-- Généré le : sam. 09 mai 2026 à 19:05
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -20,6 +20,19 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `agence_voyage_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(100) NOT NULL,
+  `email` varchar(150) NOT NULL,
+  `mot_de_passe` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -93,6 +106,13 @@ CREATE TABLE `voyages` (
 --
 
 --
+-- Index pour la table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
 -- Index pour la table `hotels`
 --
 ALTER TABLE `hotels`
@@ -121,6 +141,12 @@ ALTER TABLE `voyages`
 --
 -- AUTO_INCREMENT pour les tables déchargées
 --
+
+--
+-- AUTO_INCREMENT pour la table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `hotels`
