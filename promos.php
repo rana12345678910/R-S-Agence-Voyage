@@ -161,7 +161,7 @@
     </div>
 
     <div class="footer-bottom">
-        2025 Travel Agency. Tous droits réservés.
+        &copy; 2025 Travel Agency. Tous droits réservés.
     </div>
 
 </footer>
