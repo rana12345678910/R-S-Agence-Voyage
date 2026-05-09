@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 01 mai 2026 à 14:24
+-- Généré le : sam. 09 mai 2026 à 18:58
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -24,15 +24,35 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `hotels`
+--
+
+CREATE TABLE `hotels` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(150) NOT NULL,
+  `destination` varchar(100) NOT NULL,
+  `type_chambre` varchar(50) NOT NULL,
+  `prix` decimal(10,2) NOT NULL,
+  `description` text DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `reservations`
 --
 
 CREATE TABLE `reservations` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `voyage_id` int(11) NOT NULL,
+  `destination` varchar(100) NOT NULL,
+  `date_depart` date NOT NULL,
+  `nb_nuits` int(11) NOT NULL,
   `adultes` int(11) NOT NULL,
-  `enfants` int(11) DEFAULT 0,
+  `enfants` int(11) NOT NULL,
+  `type_chambre` varchar(50) NOT NULL,
+  `hotel` varchar(150) NOT NULL,
   `notes` text DEFAULT NULL,
   `date_reservation` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -73,12 +93,17 @@ CREATE TABLE `voyages` (
 --
 
 --
+-- Index pour la table `hotels`
+--
+ALTER TABLE `hotels`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `reservations`
 --
 ALTER TABLE `reservations`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`),
-  ADD KEY `voyage_id` (`voyage_id`);
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Index pour la table `users`
@@ -96,6 +121,12 @@ ALTER TABLE `voyages`
 --
 -- AUTO_INCREMENT pour les tables déchargées
 --
+
+--
+-- AUTO_INCREMENT pour la table `hotels`
+--
+ALTER TABLE `hotels`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `reservations`
@@ -123,8 +154,7 @@ ALTER TABLE `voyages`
 -- Contraintes pour la table `reservations`
 --
 ALTER TABLE `reservations`
-  ADD CONSTRAINT `reservations_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
-  ADD CONSTRAINT `reservations_ibfk_2` FOREIGN KEY (`voyage_id`) REFERENCES `voyages` (`id`);
+  ADD CONSTRAINT `reservations_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
