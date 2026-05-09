@@ -1,0 +1,333 @@
+body { 
+    font-family: Arial, sans-serif; 
+    margin:0; 
+    padding:0;
+    color: white; 
+    box-sizing: border-box;
+    background: #061327;
+    background: linear-gradient(196deg, rgba(6, 19, 39, 1) 0%, rgba(13, 38, 77, 1) 49%, rgba(6, 19, 39, 1) 100%);
+}
+
+/************ Navbar ************/
+nav {
+    background: #061327;
+    background: linear-gradient(196deg, rgba(6, 19, 39, 1) 0%, rgba(13, 38, 77, 1) 49%, rgba(6, 19, 39, 1) 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5px 40px;
+}
+
+nav h1 {
+    color: white;
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    color: #00bfff;
+}
+
+/* Sous-menu */
+nav ul li ul {
+    display: none;
+    position: absolute;
+    background-color: #061327;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    z-index: 10;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li {
+    padding: 10px;
+}
+
+nav ul li ul li a {
+    display: block;
+}
+
+/*logo*/
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 45px;   /* ajuste selon ton logo */
+  height: auto;
+  margin-right: 10px;
+}
+
+.site-name {
+  font-size: 24px;
+  color: white;
+  margin: 0;     /* IMPORTANT pour éviter le décalage */
+}
+
+/************ Hero avec animation ************/
+.hero {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    border-bottom: 3px solid white;
+}
+
+.hero img {
+    position: absolute;
+    width: 100%;
+    height: 130%;
+    
+    opacity: 0;
+    animation: fadeSlider 13s infinite; 
+}
+
+/* Décalage pour chaque image */
+.hero img:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.hero img:nth-child(2) {
+    animation-delay: 3s;
+}
+
+.hero img:nth-child(3) {
+    animation-delay: 6s;
+}
+.hero img:nth-child(4) {
+    animation-delay: 9s;
+}
+
+/* Animation */
+@keyframes fadeSlider {
+    0%   { opacity: 0; }
+    5%   { opacity: 1; }
+    33%  { opacity: 1; } /* reste visible */
+    38%  { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+section { 
+    padding:40px; 
+}
+
+h2 { 
+    color:#d9dfe4; 
+    margin-bottom:15px; 
+    font-style: bold;
+    text-align: center;
+}
+/* Container for promos */
+.promo-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* centers cards nicely */
+}
+
+/* Promo and card blocks */
+.promo, .card {
+    background: #fff;
+    color: #0b1d3a;              /* ensures text is visible */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    flex: 1 1 calc(33% - 20px);  /* 3 per row */
+    max-width: 300px;            /* prevents stretching too wide */
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.promo:hover, .card:hover {
+    transform: scale(1.03);      /* subtle hover effect */
+}
+
+/* Images inside cards */
+.promo img, .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Headings and text */
+.promo h3, .card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #061327;
+}
+
+.promo p, .card p {
+    font-size: 14px;
+    margin: 4px 0;
+}
+
+.video-section {
+    background:linear-gradient(196deg, rgba(6, 19, 39, 1) 0%, rgba(13, 38, 77, 1) 49%, rgba(6, 19, 39, 1) 100%);
+    padding: 1px;
+    border-radius: 1px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.video-section h2 {
+    color:  rgb(255, 255, 255) ;
+    margin-bottom:20px; 
+    font-style:bold ;
+    text-align: center;
+
+}
+.video-section video {
+    width: 800px;          
+    max-width:850px;    
+    border-radius: 7px;
+    display:inline;
+         
+}
+ 
+footer {
+    background: #061327;
+    background: linear-gradient(196deg, rgba(6, 19, 39, 1) 0%, rgba(13, 38, 77, 1) 49%, rgba(6, 19, 39, 1) 100%);
+    color: white;
+    margin-top: 40px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    padding: 40px;
+}
+
+.footer-block h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.footer-block p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 15px;
+    background-color: #040e1c;
+    font-size: 13px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #d4af37, #b8962e); /* doré */
+  color: #0b1f3a;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 48px;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0.85;
+  z-index: 999;
+}
+
+.back-to-top:hover {
+  transform: translateY(-5px);
+  opacity: 1;
+}
+
+
+    /* Formulaire personnalisé */
+.reservation-section {
+      background: rgba(255,255,255,0.05);
+      padding: 40px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: 50px auto;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    .reservation-section h2 {
+      color: #d4af37;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-size: 14px;
+      color: #d9dfe4;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 8px; /* espace entre icône et texte */
+    }
+
+    input, select, textarea {
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+      font-size: 14px;
+      background: #fff;
+      color: #061327;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    button {
+      background: linear-gradient(135deg, #d4af37, #b8962e);
+      color: #061327;
+      font-weight: bold;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    button:hover {
+      transform: translateY(-3px);
+    }
