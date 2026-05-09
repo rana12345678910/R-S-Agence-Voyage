@@ -1,28 +1,62 @@
+<?php
+session_start();
+include "db.php";
+
+$message = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+    $user = $result->fetch_assoc();
+
+    if ($user) {
+
+        if (password_verify($password, $user['mot_de_passe'])) {
+
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['nom'] = $user['nom'];
+            $_SESSION['email'] = $user['email'];
+
+            header("Location: ../index.php");
+            exit;
+
+        } else {
+            $message = " Mot de passe incorrect";
+        }
+
+    } else {
+        $message = " Utilisateur introuvable";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <title>Connexion</title>
-    <style>
-       
-    </style>
 </head>
 <body>
 
-<!-- Navbar -->
+
 <nav>
     <div class="brand">
         <h1>S&R VOYAGES</h1>
     </div>
     <ul>
-        
         <li><a href="signup.php">S'inscrire</a></li>
     </ul>
 </nav>
 
-<!-- Formulaire centré -->
+
 <div class="auth-wrapper">
     <div class="auth-card">
 
@@ -30,11 +64,18 @@
         <h2>Connexion</h2>
         <p class="auth-subtitle">Bienvenue ! Entrez vos identifiants pour continuer</p>
 
-        <form action="login.php" method="POST">
+       
+        <?php if ($message != ""): ?>
+            <p style="color:red; text-align:center;">
+                <?php echo $message; ?>
+            </p>
+        <?php endif; ?>
+
+        <form action="" method="POST">
 
             <div class="form-group">
                 <label for="email">Adresse e-mail</label>
-                <input type="email" id="email" name="email" placeholder="jean.dupont@email.com" required>
+                <input type="email" id="email" name="email" placeholder="mail@email.com" required>
             </div>
 
             <div class="form-group">
@@ -58,9 +99,9 @@
     </div>
 </div>
 
-<!-- Footer -->
+
 <footer>
-    &copy; 2025 VoyageLux — Tous droits réservés.
+    &copy; 2026 S&R VOYAGES — Tous droits réservés.
 </footer>
 
 </body>
