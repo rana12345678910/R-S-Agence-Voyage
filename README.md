@@ -34,10 +34,17 @@ Il s’inscrit dans le cadre du cahier des charges du module JSPHP et respecte l
 ```
 agence_voyage/
 │
+├── admin/
+│   ├── add_hotel.php              # Gestion des hotels
+│   ├── add_user.php               # gestion des utilisateurs
+│   ├── dashboard_admin.php        # dashboard du administrateur
+│   ├── edit_hotel.php             # modification des hotels
+│   └── edit_user                  # modification des données d'un utilisateur
+│ 
 ├── assets/
-│   ├── css/          # Fichiers CSS (style.css, styles1.css)
-│   ├── js/           # Scripts JavaScript (validation.js, main.js)
-│   └── images/       # Logos et images des destinations
+│   ├── css/          # Fichiers CSS
+│   ├── images/       # Logos et images des destinations
+│   └── videos/       # videos inclus dans le site 
 │
 ├── includes/
 │   └── db_connect.php    # Connexion a la base de donnée
@@ -69,7 +76,7 @@ agence_voyage/
 
 🚀 Installation
 1. Cloner le dépôt :
-```git clone https://github.com/tonpseudo/agence_voyage.git```
+```git clone https://github.com/rana12345678910/R-S-Agence-Voyage.git```
 2. Placer le projet dans :
 C:/xampp/htdocs/agence_voyage
 3. Lancer Apache et MySQL via XAMPP.
