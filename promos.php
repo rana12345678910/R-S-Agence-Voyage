@@ -52,7 +52,7 @@
   <section id="video" class="video-section">
     <h2>Choisissez votre voyage et vacances avec nous, et vivez vos meilleurs moments!</h2>
     <video width="100%" controls autoplay muted loop>
-      <source src="assets/images/video2.mp4" type="video/mp4">
+      <source src="assets/videos/video2.mp4" type="video/mp4">
     </video>
   </section>
 
@@ -161,7 +161,7 @@
     </div>
 
     <div class="footer-bottom">
-        &copy; 2025 Travel Agency. Tous droits réservés.
+        2025 Travel Agency. Tous droits réservés.
     </div>
 
 </footer>
