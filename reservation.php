@@ -1,3 +1,53 @@
+<?php
+session_start();
+include("includes/db_connect.php");
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $destination  = $_POST['destination'];
+    $date_depart  = $_POST['date'];
+    $nb_nuits     = $_POST['nights'];
+    $adultes      = $_POST['adults'];
+    $enfants      = $_POST['children'];
+    $type_chambre = $_POST['room'];
+    $hotel        = $_POST['hotel'];
+    $notes        = $_POST['notes'];
+
+    $user_id = $_SESSION;
+
+    
+    $sql = "INSERT INTO reservations 
+            (user_id, destination, date_depart, nb_nuits, adultes, enfants, type_chambre, hotel, notes) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param(
+        "issiiisss", 
+        $user_id, 
+        $destination, 
+        $date_depart, 
+        $nb_nuits, 
+        $adultes, 
+        $enfants, 
+        $type_chambre, 
+        $hotel, 
+        $notes
+    );
+
+    if ($stmt->execute()) {
+        echo "<p style='color:green;'>Réservation enregistrée avec succès !</p>";
+    } else {
+        echo "<p style='color:red;'>Erreur : " . $stmt->error . "</p>";
+    }
+
+    $stmt->close();
+    $conn->close();
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -42,7 +92,7 @@
 
 <section class="reservation-section">
   <h2>Réservez votre voyage</h2>
-  <form>
+  <form  method="POST" action="reservation.php">
     <!-- Destination -->
     <label for="destination"><i class="fa-solid fa-location-dot"></i> Destination :</label>
     <select id="destination" name="destination" required>
@@ -54,7 +104,7 @@
     </select>
 
     <!-- Date -->
-    <label for="date"><i class="fa-solid fa-calendar-days"></i> Date de départ :</label>
+    <label for="date"><i class="fa-solid fa-calendar-days"></i> Date d'arrivée :</label>
     <input type="date" id="date" name="date" required>
 
     <!-- Nuits -->
