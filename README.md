@@ -40,6 +40,7 @@ agence_voyage/
 │   ├── dashboard_admin.php        # dashboard du administrateur
 │   ├── edit_hotel.php             # modification des hotels
 │   └── edit_user                  # modification des données d'un utilisateur
+│ 
 ├── assets/
 │   ├── css/          # Fichiers CSS
 │   ├── images/       # Logos et images des destinations
@@ -75,7 +76,7 @@ agence_voyage/
 
 🚀 Installation
 1. Cloner le dépôt :
-```git clone https://github.com/tonpseudo/agence_voyage.git```
+```git clone https://github.com/rana12345678910/R-S-Agence-Voyage.git```
 2. Placer le projet dans :
 C:/xampp/htdocs/agence_voyage
 3. Lancer Apache et MySQL via XAMPP.
