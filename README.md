@@ -78,7 +78,7 @@ agence_voyage/
 1. Cloner le dépôt :
 ```git clone https://github.com/rana12345678910/R-S-Agence-Voyage.git```
 2. Placer le projet dans :
-C:/xampp/htdocs/agence_voyage
+C:/xampp/htdocs/AgenceVoyage
 3. Lancer Apache et MySQL via XAMPP.
 4. Accéder au site :
-http://localhost/agence_voyage/index.php
+http://localhost/AgenceVoyage/index.php
