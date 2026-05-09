@@ -9,31 +9,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
+   
+    $stmt = $conn->prepare("SELECT * FROM admin WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $admin = $result->fetch_assoc();
+
+    if ($admin && $password === $admin['mot_de_passe']) {
+
+        $_SESSION['id'] = $admin['id'];
+        $_SESSION['nom'] = $admin['nom'];
+        $_SESSION['email'] = $admin['email'];
+        $_SESSION['type'] = "admin";
+
+        header("Location: ../admin/adminpage.php");
+        exit;
+    }
+
+    
     $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
-
     $result = $stmt->get_result();
     $user = $result->fetch_assoc();
 
-    if ($user) {
+    if ($user && password_verify($password, $user['mot_de_passe'])) {
 
-        if (password_verify($password, $user['mot_de_passe'])) {
+        $_SESSION['id'] = $user['id'];
+        $_SESSION['nom'] = $user['nom'];
+        $_SESSION['email'] = $user['email'];
+        $_SESSION['type'] = "user";
 
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['nom'] = $user['nom'];
-            $_SESSION['email'] = $user['email'];
-
-            header("Location: ../index.php");
-            exit;
-
-        } else {
-            $message = " Mot de passe incorrect";
-        }
-
-    } else {
-        $message = " Utilisateur introuvable";
+        header("Location: ../user/userpage.php");
+        exit;
     }
+
+    $message = " Email ou mot de passe incorrect";
 }
 ?>
 <!DOCTYPE html>
