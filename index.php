@@ -3,7 +3,7 @@ include "connexion/db.php";
 
 $message = "";
 
-// ENVOI AVIS
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_review'])) {
 
     $nom = $_POST['nom'];
@@ -13,9 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_review'])) {
     $stmt->bind_param("ss", $nom, $commentaire);
 
     if ($stmt->execute()) {
-        $message = "✅ Avis envoyé avec succès";
+        $message = " Avis envoyé avec succès";
     } else {
-        $message = "❌ Erreur lors de l'envoi";
+        $message = " Erreur lors de l'envoi";
     }
 }
 ?>
@@ -62,6 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_review'])) {
 
         <li><a href="promos.php">Promos</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="view.php">profil</a></li>
     </ul>
 </nav>
 
