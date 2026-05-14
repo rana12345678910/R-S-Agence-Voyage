@@ -3,7 +3,7 @@ include "connexion/db.php";
 
 $message = "";
 
-
+// ENVOI AVIS
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_review'])) {
 
     $nom = $_POST['nom'];
@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_review'])) {
             <a href="#">Séjours en Tunisie</a>
             <ul>
                 <li><a href="sousse.php">Sousse</a></li>
-                <li><a href="mahdia.php">Mahdia</a></li>
+                
             </ul>
         </li>
 
@@ -63,6 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_review'])) {
         <li><a href="promos.php">Promos</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="view.php">profil</a></li>
+
     </ul>
 </nav>
 
