@@ -1,7 +1,6 @@
 <?php
 session_start();
 include("includes/db_connect.php");
-
 if(!isset($_SESSION['id'])){
     header("Location: connexion/login.php");
     exit();}
@@ -17,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hotel        = $_POST['hotel'];
     $notes        = $_POST['notes'];
 
-    $user_id = $_SESSION;
+    $user_id = $_SESSION['id'];
 
     
     $sql = "INSERT INTO reservations 
@@ -78,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <a href="#">Séjours en Tunisie</a>
         <ul>
           <li><a href="sousse.php">Sousse</a></li>
-          <li><a href="mahdia.php">Mahdia</a></li>
+        
         </ul>
       </li>
       <li>
@@ -91,6 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <li><a href="promos.php">Promos</a></li>
       
       <li><a href="#contact">Contact</a></li>
+       <li><a href="view.php">profil</a></li>
     </ul>
   </nav>
 
