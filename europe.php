@@ -22,7 +22,7 @@
                 <a href="#">Séjours en Tunisie</a>
                 <ul>
                     <li><a href="sousse.php">Sousse</a></li>
-                    <li><a href="mahdia.php">Mahdia</a></li>
+                    
                 </ul>
             </li>
             <li>
@@ -35,13 +35,14 @@
             <li><a href="promos.php">Promos</a></li>
             
             <li><a href="#contact">Contact</a></li>
+             <li><a href="view.php">profil</a></li>
         </ul>
     </nav>
 </nav>
 
 <!-- Hero -->
 <div class="voy">
-    <img src="europe/voyage.png" alt="Europe">
+    <img src="assets/images/europe/voyage.png" alt="Europe">
 </div>
 
 <!-- Présentation -->
@@ -63,7 +64,7 @@
     <div class="hotels-grid">
 
         <div class="card2">
-            <img src="europe/paris.jpg" alt="Voyage à Paris" class="cardimg">
+            <img src="assets/images/europe/paris.jpg" alt="Voyage à Paris" class="cardimg">
             <div class="info">
                 <h3>France – Paris</h3>
                 <p>Prix : à partir de 3200 DT</p>
