@@ -22,7 +22,7 @@
                 <a href="#">Séjours en Tunisie</a>
                 <ul>
                     <li><a href="sousse.php">Sousse</a></li>
-                    <li><a href="mahdia.php">Mahdia</a></li>
+                    
                 </ul>
             </li>
             <li>
@@ -35,12 +35,13 @@
             <li><a href="promos.php">Promos</a></li>
             
             <li><a href="#contact">Contact</a></li>
+             <li><a href="view.php">profil</a></li>
         </ul>
     </nav>
 
 <!-- Hero -->
 <div class="voy">
-    <img src="asie/voayage.jpg" alt="Asie">
+    <img src="assets/images/asie/voayage.jpg" alt="Asie">
     
 </div>
 
