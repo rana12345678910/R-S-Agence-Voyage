@@ -146,6 +146,47 @@
     </div>
 
 </div>
+<table>
+                <thead>
+                    <tr><th>Hôtel</th><th>Destination</th><th>Étoiles</th><th>Prix / nuit</th><th>Actions</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><div class="user-cell"><div class="hotel-img">🏰</div><div><p style="color:white;font-weight:600">Riad Al Andalus</p><span style="color:rgba(255,255,255,0.4);font-size:11px">Médina</span></div></div></td>
+                        <td>🇲🇦 Marrakech</td>
+                        <td><span class="stars">★★★★★</span></td>
+                        <td class="gold">180 €</td>
+                        
+                        <td>
+                            <a href="edit_hotel.php" class="btn-edit">✏️ Modifier</a>
+                            <button class="btn-del">🗑 Suppr.</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><div class="user-cell"><div class="hotel-img">🗼</div><div><p style="color:white;font-weight:600">Hotel Shibuya Sky</p><span style="color:rgba(255,255,255,0.4);font-size:11px">Shibuya</span></div></div></td>
+                        <td>🇯🇵 Tokyo</td>
+                        <td><span class="stars">★★★★</span></td>
+                        <td class="gold">210 €</td>
+                        
+                        <td>
+                            <a href="edit_hotel.php" class="btn-edit">✏️ Modifier</a>
+                            <button class="btn-del">🗑 Suppr.</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><div class="user-cell"><div class="hotel-img">🌊</div><div><p style="color:white;font-weight:600">Caldera Blue Villa</p><span style="color:rgba(255,255,255,0.4);font-size:11px">Oia</span></div></div></td>
+                        <td>🇬🇷 Santorin</td>
+                        <td><span class="stars">★★★★★</span></td>
+                        <td class="gold">320 €</td>
+                       
+                       <td>
+                            <a href="edit_hotel.php" class="btn-edit">✏️ Modifier</a>
+                            <button class="btn-del">🗑 Suppr.</button>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
 
 </body>
 </html>

@@ -15,7 +15,7 @@
     <nav>
       <a href="dashboard_admin.php">🏠 Dashboard</a>
         <a href="#users"  class="active">👥 Utilisateurs</a>
-        <a href="#hotels">      🏨 Hôtels</a>
+        <a href="hotel.php">      🏨 Hôtels</a>
         <a href="#reservations">📅 Réservations</a>
     </nav>
     <div class="sidebar-bottom">

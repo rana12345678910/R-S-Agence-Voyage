@@ -54,9 +54,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 <nav>
-    <div class="brand">
-        <h1>S&R VOYAGES</h1>
-    </div>
+         <div class="brand">
+            <img src="../assets/images/logo2.png" alt="Logo" class="logo">
+            <h1 class="site-name"><a href="../index.php">S&R VOYAGES</a></h1>
+        </div>
+        
     <ul>
         <li><a href="login.php">Se connecter</a></li>
     </ul>

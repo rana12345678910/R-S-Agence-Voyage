@@ -57,17 +57,40 @@ CREATE TABLE `avis` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hotels`
+-- Structure de la table `hotels`
 --
 
 CREATE TABLE `hotels` (
   `id` int(11) NOT NULL,
-  `nom` varchar(20) NOT NULL,
-  `destination` varchar(20) NOT NULL,
-  `prix` float NOT NULL,
-  `description` text NOT NULL,
-  `image` text NOT NULL
+  `nom` varchar(150) NOT NULL,
+  `destination` varchar(100) NOT NULL,
+  `type_chambre` varchar(50) NOT NULL,
+  `prix` decimal(10,2) NOT NULL,
+  `description` text DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `etoiles` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `hotels`
+--
+ALTER TABLE `hotels`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `hotels`
+--
+ALTER TABLE `hotels`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+COMMIT;
 
 -- --------------------------------------------------------
 

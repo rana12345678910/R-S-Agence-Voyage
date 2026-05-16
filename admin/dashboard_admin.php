@@ -15,9 +15,9 @@
  <aside class="sidebar">
     <div class="sidebar-logo">✈ S&R VOYAGES<span>ADMIN PANEL</span></div>
     <nav>
-      <a href="dashboard_admin.php">🏠 Dashboard</a>
-        <a href="#users"  class="active">👥 Utilisateurs</a>
-        <a href="#hotels">      🏨 Hôtels</a>
+      <a href="dashboard_admin.php" class="active">🏠 Dashboard</a>
+        <a href="edit_user.php"  >👥 Utilisateurs</a>
+        <a href="hotel.php">      🏨 Hôtels</a>
         <a href="#reservations">📅 Réservations</a>
     </nav>
     <div class="sidebar-bottom">
@@ -68,7 +68,7 @@
 
         <!-- HÔTELS -->
         <div class="panel" id="hotels">
-            <div class="panel-head">🏨 Hôtels <a href="add_hotel.php">+ Ajouter</a></div>
+            <div class="panel-head">🏨 Hôtels <a href="ajouter_hotel.php">+ Ajouter</a></div>
             <table>
                 <thead>
                     <tr><th>Hôtel</th><th>Destination</th><th>Étoiles</th><th>Prix / nuit</th><th>Actions</th></tr>
