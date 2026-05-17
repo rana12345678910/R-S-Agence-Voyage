@@ -4,66 +4,89 @@ include("../includes/db_connect.php"); // connexion à ta base
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../assets/css/style3.css">
-    <title>Liste des Utilisateurs</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 14px;
-            margin-top: 10px;
-        }
-        thead tr {
-            background: rgba(212, 175, 55, 0.12);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-        }
-        th {
-            padding: 13px 16px;
-            text-align: left;
-            color: #d4af37;
-            font-size: 13px;
-            font-weight: 600;
-        }
-        td {
-            padding: 13px 16px;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            color: rgba(255,255,255,0.85);
-            font-size: 14px;
-        }
-        tbody tr:hover { background: rgba(255,255,255,0.04); }
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../assets/css/style3.css">
+<title>Gestion des Utilisateurs</title>
+<style>
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 10px;
+}
+thead tr {
+    background: rgba(212, 175, 55, 0.12);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+th {
+    padding: 13px 16px;
+    text-align: left;
+    color: #d4af37;
+    font-size: 13px;
+    font-weight: 600;
+}
+td {
+    padding: 13px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.85);
+    font-size: 14px;
+}
+tbody tr:hover { background: rgba(255,255,255,0.04); }
 
-        .btn-add {
-            display: inline-block;
-            margin-bottom: 18px;
-            padding: 9px 18px;
-            background: #d4af37;
-            color: #061327;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 700;
-        }
-        .btn-edit {
-            padding: 6px 12px;
-            background: rgba(21, 101, 192, 0.25);
-            color: #64b5f6;
-            border: 1px solid rgba(21, 101, 192, 0.4);
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 12px;
-            margin-right: 6px;
-        }
-        .btn-delete {
-            padding: 6px 12px;
-            background: rgba(198, 40, 40, 0.25);
-            color: #ef9a9a;
-            border: 1px solid rgba(198, 40, 40, 0.4);
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 12px;
-        }
-    </style>
+/* BUTTONS */
+.btn-add {
+    display: inline-block;
+    margin-bottom: 18px;
+    padding: 9px 18px;
+    background: #d4af37;
+    color: #061327;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.2s;
+}
+.btn-add:hover { opacity: 0.85; }
+
+.btn-edit {
+    padding: 6px 12px;
+    background: rgba(21, 101, 192, 0.25);
+    color: #64b5f6;
+    border: 1px solid rgba(21, 101, 192, 0.4);
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 12px;
+    margin-right: 6px;
+}
+.btn-edit:hover { background: rgba(21, 101, 192, 0.45); }
+
+.btn-delete {
+    padding: 6px 12px;
+    background: rgba(198, 40, 40, 0.25);
+    color: #ef9a9a;
+    border: 1px solid rgba(198, 40, 40, 0.4);
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 12px;
+}
+.btn-delete:hover { background: rgba(198, 40, 40, 0.45); }
+
+/* TITRES */
+.topbar h2 {
+    color: white;
+    margin-bottom: 4px;
+}
+.topbar p {
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 20px;
+}
+.content h3 {
+    margin-bottom: 18px;
+    font-size: 16px;
+    color: #d4af37;
+}
+</style>
 </head>
 <body>
 
