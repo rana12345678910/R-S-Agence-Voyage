@@ -1,28 +1,42 @@
+<?php
+include("../includes/db_connect.php"); // connexion à ta base
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S&R VOYAGES</title>
-    <link rel="stylesheet" href="../assets/css/style2.css">
-    <style>
-        
-    </style>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../assets/css/style2.css">
+<title>Dashboard Admin</title>
+<style>
+.panel-head {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+}
+.panel-head a {
+    font-size:12px;
+    color:#d4af37;
+    text-decoration:none;
+    font-weight:600;
+}
+.panel-head a:hover { text-decoration:underline; }
+</style>
 </head>
 <body>
 
 <!-- SIDEBAR -->
- <aside class="sidebar">
+<aside class="sidebar">
     <div class="sidebar-logo">✈ S&R VOYAGES<span>ADMIN PANEL</span></div>
     <nav>
-      <a href="dashboard_admin.php" class="active">🏠 Dashboard</a>
-        <a href="users.php"  >👥 Utilisateurs</a>
-        <a href="hotel.php">      🏨 Hôtels</a>
+        <a href="dashboard_admin.php" class="active">🏠 Dashboard</a>
+        <a href="users.php">👥 Utilisateurs</a>
+        <a href="hotel.php">🏨 Hôtels</a>
         <a href="reservations.php">📅 Réservations</a>
     </nav>
     <div class="sidebar-bottom">
         <p>Admin</p><span>Super Admin</span>
-       <a href="../login.php" class="btn-logout">🚪 Se déconnecter</a>
+        <a href="../login.php" class="btn-logout">🚪 Se déconnecter</a>
     </div>
 </aside>
 
@@ -37,97 +51,99 @@
 
         <!-- UTILISATEURS -->
         <div class="panel" id="users">
-            <div class="panel-head">👥 Utilisateurs <a href="add_user.php">+ Ajouter</a></div>
+            <div class="panel-head">👥 Utilisateurs <a href="users.php">Voir tout</a></div>
             <table>
                 <thead>
-                    <tr><th>Membre</th><th>Email</th><th>Rôle</th><th>Inscrit le</th><th>Actions</th></tr>
+                    <tr><th>Nom</th><th>Email</th><th>Date inscription</th></tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><div class="user-cell"><div class="av" style="background:linear-gradient(135deg,#d4af37,#b8962e)">SM</div><div><p>Sophie Martin</p><span>Paris, France</span></div></div></td>
-                        <td>sophie.m@gmail.com</td><td>Client</td><td>8 mai 2025</td>
-                       
-                       <td>
-                            <a href="edit_user.php" class="btn-edit">✏️ Modifier</a>
-                            <button class="btn-del">🗑 Suppr.</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><div class="user-cell"><div class="av" style="background:linear-gradient(135deg,#00bfff,#007aad)">LB</div><div><p>Lucas Bernard</p><span>Lyon, France</span></div></div></td>
-                        <td>lucas.b@email.fr</td><td>Client</td><td>7 mai 2025</td>
-                       
-                        <td>
-                            <a href="edit_user.php" class="btn-edit">✏️ Modifier</a>
-                            <button class="btn-del">🗑 Suppr.</button>
-                        </td>
-                    </tr>
-                    
+                <?php
+                $res = $conn->query("SELECT nom,email,date_inscription FROM users ORDER BY id DESC LIMIT 4");
+                if ($res && $res->num_rows > 0) {
+                    while ($row = $res->fetch_assoc()) {
+                        echo "<tr>
+                                <td>".htmlspecialchars($row['nom'])."</td>
+                                <td>".htmlspecialchars($row['email'])."</td>
+                                <td>".htmlspecialchars($row['date_inscription'])."</td>
+                              </tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='3'>Aucun utilisateur</td></tr>";
+                }
+                ?>
                 </tbody>
             </table>
         </div>
 
         <!-- HÔTELS -->
         <div class="panel" id="hotels">
-            <div class="panel-head">🏨 Hôtels <a href="ajouter_hotel.php">+ Ajouter</a></div>
+            <div class="panel-head">🏨 Hôtels <a href="hotel.php">Voir tout</a></div>
             <table>
                 <thead>
-                    <tr><th>Hôtel</th><th>Destination</th><th>Étoiles</th><th>Prix / nuit</th><th>Actions</th></tr>
+                    <tr><th>Nom</th><th>Destination</th><th>Étoiles</th><th>Prix/nuit</th></tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><div class="user-cell"><div class="hotel-img">🏰</div><div><p style="color:white;font-weight:600">Riad Al Andalus</p><span style="color:rgba(255,255,255,0.4);font-size:11px">Médina</span></div></div></td>
-                        <td>🇲🇦 Marrakech</td>
-                        <td><span class="stars">★★★★★</span></td>
-                        <td class="gold">180 €</td>
-                        
-                        <td>
-                            <a href="edit_hotel.php" class="btn-edit">✏️ Modifier</a>
-                            <button class="btn-del">🗑 Suppr.</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><div class="user-cell"><div class="hotel-img">🗼</div><div><p style="color:white;font-weight:600">Hotel Shibuya Sky</p><span style="color:rgba(255,255,255,0.4);font-size:11px">Shibuya</span></div></div></td>
-                        <td>🇯🇵 Tokyo</td>
-                        <td><span class="stars">★★★★</span></td>
-                        <td class="gold">210 €</td>
-                        
-                        <td>
-                            <a href="edit_hotel.php" class="btn-edit">✏️ Modifier</a>
-                            <button class="btn-del">🗑 Suppr.</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><div class="user-cell"><div class="hotel-img">🌊</div><div><p style="color:white;font-weight:600">Caldera Blue Villa</p><span style="color:rgba(255,255,255,0.4);font-size:11px">Oia</span></div></div></td>
-                        <td>🇬🇷 Santorin</td>
-                        <td><span class="stars">★★★★★</span></td>
-                        <td class="gold">320 €</td>
-                       
-                       <td>
-                            <a href="edit_hotel.php" class="btn-edit">✏️ Modifier</a>
-                            <button class="btn-del">🗑 Suppr.</button>
-                        </td>
-                    </tr>
-                    
+                <?php
+                $res = $conn->query("SELECT nom,destination,etoiles,prix FROM hotels ORDER BY id DESC LIMIT 4");
+                if ($res && $res->num_rows > 0) {
+                    while ($row = $res->fetch_assoc()) {
+                        echo "<tr>
+                                <td>".htmlspecialchars($row['nom'])."</td>
+                                <td>".htmlspecialchars($row['destination'])."</td>
+                                <td>".(int)$row['etoiles']." ⭐</td>
+                                <td class='gold'>".htmlspecialchars($row['prix'])." €</td>
+                              </tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='4'>Aucun hôtel</td></tr>";
+                }
+                ?>
                 </tbody>
             </table>
         </div>
 
         <!-- RÉSERVATIONS -->
         <div class="panel" id="reservations">
-            <div class="panel-head">📅 Réservations <a href="#">Exporter</a></div>
+            <div class="panel-head">📅 Réservations <a href="reservations.php">Voir tout</a></div>
             <table>
                 <thead>
-                    <tr><th>#</th><th>Client</th><th>Hôtel</th><th>nbre de nuits</th><th>adultes</th><th>enfants</th><th>Départ</th><th>Actions</th></tr>
+                    <tr>
+                        <th>ID</th>
+                        <th>Utilisateur</th>
+                        <th>Destination</th>
+                        <th>Date départ</th>
+                        <th>Nuits</th>
+                        <th>Adultes</th>
+                        <th>Enfants</th>
+                        <th>Type chambre</th>
+                        <th>Hôtel</th>
+                        <th>Notes</th>
+                        <th>Date réservation</th>
+                    </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="gold">#1084</td>
-                        <td>Sophie Martin</td><td>🏰 Riad Al Andalus</td><td>5</td><td>2</td><td>4</td>
-                        <td>14 mai</td>
-                       
-                        <td><button class="btn-del">🗑</button></td>
-                    </tr>
-                    
+                <?php
+                $res = $conn->query("SELECT * FROM reservations ORDER BY id DESC LIMIT 4");
+                if ($res && $res->num_rows > 0) {
+                    while ($row = $res->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td class='gold'>#" . (int)$row['id'] . "</td>";
+                        echo "<td>" . htmlspecialchars($row['user_id']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['destination']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['date_depart']) . "</td>";
+                        echo "<td>" . (int)$row['nb_nuits'] . "</td>";
+                        echo "<td>" . (int)$row['adultes'] . "</td>";
+                        echo "<td>" . (int)$row['enfants'] . "</td>";
+                        echo "<td>" . htmlspecialchars($row['type_chambre']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['hotel']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['notes']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['date_reservation']) . "</td>";
+                        echo "</tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='11'>Aucune réservation</td></tr>";
+                }
+                ?>
                 </tbody>
             </table>
         </div>
@@ -137,9 +153,3 @@
 
 </body>
 </html>
-
-
-
-
-   
-    
