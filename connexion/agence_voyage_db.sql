@@ -122,7 +122,8 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `nom` varchar(20) NOT NULL,
   `email` varchar(20) NOT NULL,
-  `mot_de_passe` varchar(100) NOT NULL
+  `mot_de_passe` varchar(100) NOT NULL,
+  `date_inscription` date NOT NULL DEFAULT curdate()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

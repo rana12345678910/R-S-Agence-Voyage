@@ -14,7 +14,7 @@
     <div class="sidebar-logo">✈ S&R VOYAGES<span>ADMIN PANEL</span></div>
     <nav>
       <a href="dashboard_admin.php">🏠 Dashboard</a>
-        <a href="#users"  class="active">👥 Utilisateurs</a>
+        <a href="users.php"  class="active">👥 Utilisateurs</a>
         <a href="hotel.php">      🏨 Hôtels</a>
         <a href="#reservations">📅 Réservations</a>
     </nav>

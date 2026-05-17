@@ -33,7 +33,7 @@ $hotel = $result->fetch_assoc();
     <div class="sidebar-logo">✈ S&R VOYAGES<span>ADMIN PANEL</span></div>
     <nav>
         <a href="dashboard_admin.php">🏠 Dashboard</a>
-        <a href="add_user.php">👥 Utilisateurs</a>
+        <a href="users.php">👥 Utilisateurs</a>
         <a href="hotel.php" class="active">🏨 Hôtels</a>
         <a href="reservations.php">📅 Réservations</a>
     </nav>
