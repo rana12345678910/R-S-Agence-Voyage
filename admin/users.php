@@ -6,6 +6,7 @@ include("../includes/db_connect.php"); // connexion à ta base
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="../assets/css/style3.css">
+<link rel="stylesheet" href="../assets/css/style2.css">
 <title>Gestion des Utilisateurs</title>
 <style>
 /* TABLE */
@@ -101,7 +102,7 @@ tbody tr:hover { background: rgba(255,255,255,0.04); }
     </nav>
     <div class="sidebar-bottom">
         <p>Admin</p><span>Super Admin</span>
-        <a href="../login.php" class="btn-logout">🚪 Se déconnecter</a>
+        <a href="../connexion/login.php" class="btn-logout">🚪 Se déconnecter</a>
     </div>
 </aside>
 

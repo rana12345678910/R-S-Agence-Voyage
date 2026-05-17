@@ -36,14 +36,14 @@ include("../includes/db_connect.php"); // connexion à ta base
     </nav>
     <div class="sidebar-bottom">
         <p>Admin</p><span>Super Admin</span>
-        <a href="../login.php" class="btn-logout">🚪 Se déconnecter</a>
+        <a href="../connexion/login.php" class="btn-logout">🚪 Se déconnecter</a>
     </div>
 </aside>
 
 <!-- MAIN -->
 <main class="main">
     <div class="topbar">
-        <div><h2>Dashboard Admin</h2><p>S&R VOYAGES — Gestion</p></div>
+        <div><h2>Dashboard Admin</h2><p>S&R VOYAGES</p></div>
         <input type="text" placeholder="🔍  Rechercher…">
     </div>
 

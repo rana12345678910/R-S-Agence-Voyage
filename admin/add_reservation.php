@@ -28,6 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="../assets/css/style3.css">
+<link rel="stylesheet" href="../assets/css/style2.css">
 <title>Ajouter Réservation</title>
 <style>
 form {
@@ -79,9 +80,9 @@ input, select, textarea {
     <a href="reservations.php" class="active">📅 Réservations</a>
   </nav>
   <div class="sidebar-bottom">
-    <p>Admin</p><span>Super Admin</span>
-    <a href="../login.php" class="btn-logout">🚪 Se déconnecter</a>
-  </div>
+        <p>Admin</p><span>Super Admin</span>
+        <a href="../connexion/login.php" class="btn-logout">🚪 Se déconnecter</a>
+    </div>
 </aside>
 
 <!-- MAIN -->

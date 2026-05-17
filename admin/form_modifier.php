@@ -24,6 +24,7 @@ $hotel = $result->fetch_assoc();
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../assets/css/style3.css">
+    <link rel="stylesheet" href="../assets/css/style2.css">
     <title>Modifier un Hôtel</title>
 </head>
 <body>
@@ -39,7 +40,7 @@ $hotel = $result->fetch_assoc();
     </nav>
     <div class="sidebar-bottom">
         <p>Admin</p><span>Super Admin</span>
-        <a href="../login.php" class="btn-logout">🚪 Se déconnecter</a>
+        <a href="../connexion/login.php" class="btn-logout">🚪 Se déconnecter</a>
     </div>
 </aside>
 

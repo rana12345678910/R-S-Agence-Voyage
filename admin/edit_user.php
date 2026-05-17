@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Modifier Utilisateur</title>
   <link rel="stylesheet" href="../assets/css/style3.css">
+  <link rel="stylesheet" href="../assets/css/style2.css">
 </head>
 <body>
 
@@ -20,7 +21,7 @@
     </nav>
     <div class="sidebar-bottom">
         <p>Admin</p><span>Super Admin</span>
-       <a href="../login.php" class="btn-logout">🚪 Se déconnecter</a>
+        <a href="../connexion/login.php" class="btn-logout">🚪 Se déconnecter</a>
     </div>
 </aside>
  
